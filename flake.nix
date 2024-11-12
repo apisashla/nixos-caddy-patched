@@ -41,6 +41,7 @@
 
           caddy = pkgs.buildGoModule {
             pname = "caddy";
+	    meta.mainProgram = "caddy";
             inherit version;
             src = ./caddy-src;
             runVend = true;
