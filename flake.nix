@@ -41,15 +41,16 @@
 
           caddy = pkgs.buildGoModule {
             pname = "caddy";
-	    meta.mainProgram = "caddy";
             inherit version;
             src = ./caddy-src;
             runVend = true;
             vendorHash = "sha256-/e6GaxAae5yM5wTB8pwT3tDsack24xv5rxszffwTN2A=";
 
-          };
-        });
+	    meta.mainProgram = "caddy";
 
-      defaultPackage = forAllSystems (system: self.packages.${system}.caddy);
-    };
+          };
+
+      default = self.packages.${system}.caddy;
+    }
+  );
 }
