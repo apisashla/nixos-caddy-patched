@@ -50,7 +50,8 @@
 
           };
 
-      default = self.packages.${system}.caddy;
-    }
-  );
+        default = self.packages.${system}.caddy;
+      }
+    );
+  };
 }
